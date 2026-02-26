@@ -30,29 +30,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for Fade-In Animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            if (entry.target.classList.contains('service-card') ||
-                entry.target.classList.contains('testimonial-card') ||
-                entry.target.classList.contains('gallery-item')) {
-                entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-            }
-        }
-    });
-}, observerOptions);
-
-// Observe elements
-document.querySelectorAll('.service-card, .testimonial-card, .gallery-item').forEach(el => {
-    observer.observe(el);
-});
+/////////////////////////////////////////////////////////////////////
 
 // Add scroll effect to header
 const header = document.querySelector('header');
@@ -62,4 +40,5 @@ window.addEventListener('scroll', () => {
     } else {
         header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.08)';
     }
+
 });
